@@ -6,11 +6,13 @@ import Checkbox from '@material-ui/core/Checkbox'
 import Button from '@material-ui/core/Button'
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from '@material-ui/lab/Alert';
+import {signIn,setLoginInfo} from './loginAction'
+import { connect } from 'react-redux';
 function Alert(props) {
   return <MuiAlert variant="filled" {...props} />;
 }
 
-export default function Signin() {
+ function Signin() {
 
 
   const [email, setEmail] = useState('')
@@ -64,22 +66,33 @@ export default function Signin() {
     return isError
   }
   const showPasswordHandler = () => {
-    setShowPassword(true)
+    setShowPassword(!showPassword)
   }
   const snackBarHandler = (event,reason) => {
-    if(reason == "clickaway"){
+    if(reason === "clickaway"){
       return
     }
     setSnackBarOpen(false)
   }
-  const formSubmitHandler = (event) => {
+  const formSubmitHandler =async (event) => {
     const err = validateForm()
     console.log(err);
     if (!err) {
-      console.log('Api calling');
-      setSnackBarOpen(true)
-      setSnackType('success')
-      setSnackMessage('passed')
+      const response = await signIn(email,password);
+      console.log('response is ',response);
+      if((response).status===200){
+        console.log('Api calling');
+        setSnackBarOpen(true)
+        setSnackType('success')
+        setSnackMessage('passed')
+      }
+      else{
+        console.log('Api calling with invalid data',response);
+        setSnackBarOpen(true)
+        setSnackType('error')
+        setSnackMessage('invalod cred')
+      }
+     
     } else {
       console.log("reg failed")
       setSnackBarOpen(true)
@@ -187,3 +200,8 @@ export default function Signin() {
     </div>
   )
 }
+const mapActionToProps = {
+  setLoginInfo
+}
+
+export default connect(null, mapActionToProps)(Signin)

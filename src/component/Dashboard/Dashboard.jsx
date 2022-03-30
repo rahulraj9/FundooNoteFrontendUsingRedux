@@ -320,7 +320,15 @@ const useStyles = makeStyles((theme) => ({
     <div>helolone</div>
     <div>2nd commit</div>
     <div>ddj</div>
+    <div>rebase</div>
 
+<div>helolone</div>
+    <div>2nd commit</div>
+    <div>ddj</div>
+    <div>rebase</div>
+    <div>ddj</div>
+    <div>rebase</div>
+    
         </div>
     );
 }

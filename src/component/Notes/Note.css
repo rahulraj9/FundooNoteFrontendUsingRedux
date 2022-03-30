@@ -1,0 +1,142 @@
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.noteBlock {
+    width: 250px;
+    min-height: 120px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: #d3d3d3 solid 1px;
+    border-radius: 8px;
+    margin: 1%;
+}
+
+.optionContainer {
+    height: 30px;
+}
+
+.inputBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.noteOption {
+    display: none;
+    cursor: pointer;
+}
+
+.noteBlock:hover .noteOption {
+    display: block;
+}
+
+.displayText {
+    font-size: large;
+    margin: 3px 4px 4px 4px;
+}
+
+.AllNotes {
+    display: flex;
+    flex-flow: wrap;
+    align-items: flex-start;
+    margin-left: 70px;
+}
+
+.addnoteNone {
+    display: none;
+}
+
+@media only screen and (max-width: 615px) {
+    .noteBlock {
+        width: 100%;
+        margin-left: 10px;
+    }
+    .displayNotes {
+        width: 105vw;
+        margin: 10px 3px 10px -73px;
+    }
+}
+
+
+
+.addNotes {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 2px 4px 6px 4px rgba(60, 64, 67, 0.149);
+    border-radius: 10px;
+    font-family: Roboto, Arial, sans-serif;
+    /* /* margin-left: 180px; */
+    /* margin-top: -200px; */
+}
+
+.notesField {
+    display: flex;
+    flex-direction: column;
+    padding: 7px 15px 0px 15px;
+    width: 100%;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.noteInput {
+    display: flex;
+    align-items: center;
+    padding: 7px 15px 7px 15px;
+}
+
+.Note {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.addNoteOptions {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 15px 7px 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.closeNotes {
+    padding: 10px 10px 10px 10px;
+    font-size: 10px;
+    font-family: 'Google Sans', Roboto, Arial, sans-serif;
+}
+
+.closeNotes:hover {
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .addNotes {
+        display: flex;
+        width: 300px;
+    }
+    .noteInput {
+        width: 46%;
+        padding: 10px 15px;
+    }
+}
+
+@media only screen and (max-width: 455px) {
+    .noteInput {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .addNoteOptions {
+        display: flex;
+        flex-direction: column;
+    }
+}
+.mainContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
